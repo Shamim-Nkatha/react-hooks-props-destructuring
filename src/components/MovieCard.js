@@ -1,17 +1,20 @@
 import React from "react";
+import MovieCard from "./MovieCard";
 
-function MovieCard({
-  title,
-  posterSrc = "https://m.media-amazon.com/images/M/MV5BOTJjNzczMTUtNzc5MC00ODk0LWEwYjgtNzdiOTEyZmQxNzhmXkEyXkFqcGdeQXVyNzMzMjU5NDY@._V1_UY268_CR1,0,182,268_AL_.jpg",
-  genres,
-}) {
+
+function App() {
+  const title ="smile";
+  
+  const  {postersurl}  ="https://m.media-amazon.com/images/M/MV5BOGIwYjZlOTctZTNhOC00OTdiLWI5ZWItOTdiMWRjMjUwMDlhXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_.jpg";
+  const genresArr = ["Action", "Adventure", "Science Fiction", "Thriller"];
+
   return (
-    <div className="movie-card">
-      <img src={posterSrc} alt={title} />
-      <h2>{title}</h2>
-      <small>{genres.join(", ")}</small>
+    <div className="App">
+      {/*passing down the props from the parent component */}
+      <MovieCard
+       title={title} genres={genresArr} />
     </div>
   );
 }
 
-export default MovieCard;
+export default App;
